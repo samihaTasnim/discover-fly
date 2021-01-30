@@ -119,6 +119,7 @@
         <div class="container">
             <h1>&#127881 Congratulations &#127881</h1>
             <p id="ticket-info"></p>
+            <p>You can see your purchase related information <a href="">here</a>.</p>
         </div>
         
     </div>
@@ -147,6 +148,10 @@
         }
 
         function showConfirmation() {
+            if(document.getElementById("subTotal").innerText === "0") {
+                alert("Please choose a ticket to book your flight")
+                return;
+            }
             document.getElementById("hide").style.display = "none"
             document.getElementById('confirm-message').style.display = "block";
             const message = "You have bought " + document.getElementById('first-class-ticket-count').value + " first class tickets and " + document.getElementById('economy-class-ticket-count').value + " economy class tickets costing $" + document.getElementById("subTotal").innerText;
@@ -155,5 +160,4 @@
     </script>
 
 </body>
-
 </html>
